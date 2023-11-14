@@ -12,7 +12,7 @@ export function Note({ data, ...rest }) {
 
 
   return (
-    <Container to="/noteView" {...rest}>
+    <Container  {...rest}>
 
       <h1>{data.title}</h1>
 

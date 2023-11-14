@@ -10,11 +10,10 @@ import { EditProfile } from "../pages/EditProfile";
 export function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<SignIn />} />
-      <Route path="/signUp" element={<SingUp />} />
-      <Route path="/home" element={<Home />} />
+
+      <Route path="/" element={<Home />} />
       <Route path="/newNote" element={<NewNote />} />
-      <Route path="/noteView" element={<NoteView />} />
+      <Route path="/noteView/:id" element={<NoteView />} />
       <Route path="/editProfile" element={<EditProfile />} />
     </Routes>
   );

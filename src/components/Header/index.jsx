@@ -2,12 +2,21 @@
 
 import { FiSearch } from "react-icons/fi";
 import { Container, Profile, SearchInput } from "./styles";
+
+import avatarPlaceholder from "../../assets/avatar.svg";
+
 import { Link } from "react-router-dom";
+import { useAuth } from "../../hooks/auth";
+import { api } from "../../services/api";
 
 export function Header() {
+
+  const { signOut, user } = useAuth();
+
+  const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
   return (
     <Container>
-      <h1>Movie Notes</h1>
+      <h1>MovieNotes</h1>
 
       <SearchInput >
 
@@ -18,10 +27,10 @@ export function Header() {
       <Profile to="/editProfile">
 
         <div>
-          <strong>Felipe Barbosa</strong>
-          <Link to="/">Sair</Link>
+          <strong>{user.name}</strong>
+          <Link to="/" onClick={signOut}>Sair</Link>
         </div>
-        <img src="https://github.com/felipe-barbos.png" alt="Foto de perfil" />
+        <img src={avatarUrl} alt="Foto de perfil" />
 
       </Profile>
 

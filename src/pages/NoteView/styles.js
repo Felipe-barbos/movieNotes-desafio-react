@@ -8,6 +8,9 @@ export const Container = styled.div`
 
   margin: 0 auto;
 
+
+
+  
 `;
 
 export const Content = styled.div`
@@ -81,6 +84,22 @@ export const Content = styled.div`
   p{
     text-align: justify;
   }
+
+
+
+  .actionButton{
+
+    margin-top: 3rem;
+    display: flex;
+    gap: 4rem;
+
+
+    > button:last-child {
+      background: ${({ theme }) => theme.COLORS.BLACK_300};
+      color: ${({ theme }) => theme.COLORS.PINK};
+    }
+  }
+
 `;
 
 export const GoHome = styled(Link)`

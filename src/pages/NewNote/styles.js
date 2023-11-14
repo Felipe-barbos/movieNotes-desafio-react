@@ -26,12 +26,20 @@ export const Content = styled.div`
 
   padding: 4rem;
 
+  overflow-y: scroll;
+
 
 
   h1{
     font-size: 3.6rem;
     font-weight: 500;
 
+  }
+
+  textarea{
+    display: block;
+    width: 100%;
+    height: 27.5rem;
   }
 
   .titleNote{
